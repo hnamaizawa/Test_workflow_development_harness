@@ -80,4 +80,4 @@ uip rpa run "TestCase.xaml" --project-dir "." --output json
 - ソース: `skills/screenplay-to-uia-testcase/SKILL.md`
 - オーケストレーション、NUITask の書き方、検証ループを自動処理
 
-詳細は [AGENTS.md](./AGENTS.md) を参照してください。
+詳細は [テストWF生産工場_ハーネス設計ガイド.md](./テストWF生産工場_ハーネス設計ガイド.md) と [AGENTS.md](./AGENTS.md) を参照してください。

@@ -12,7 +12,7 @@
 | **フレームワーク** | Windows UI Automation（VisualBasic） |
 | **主テストケース** | `TestCase.xaml` |
 | **テスト対象** | UiBank ローン申請フロー（Edge ブラウザ） |
-| **引数** | メールアドレス（既定値: `demo@demo.com`） |
+| **引数** | メールアドレス（既定値: `test@example.invalid`） |
 | **結果** | `resultText` 変数に取得 |
 
 ---

@@ -3,7 +3,7 @@
 - **目的**: Test Cloud 日本市場展開の障壁（テスト WF 開発の難しさ・保守負荷・実行性能）を、「ScreenPlay で易しくオーサリング → UIAutomation へ変換して高速実行」する自動生産ラインで解消する。
 - **入力**: Test Cloud / Test Manager のテストケース手順ステップ（自然言語）
 - **出力**: 品質基準（Definition of Done）を満たした完成テスト Workflow（ScreenPlay 版 ＋ UIAutomation 版）
-- **前提実証**: 本ガイドは、直近に手作業で通した実フロー（Test Manager 手順抽出 `HNTS:5` → ScreenPlay 生成 → UIA 変換 → validate/build 検証）を「反復可能な工場（ハーネス）」へ産業化する設計。
+- **前提実証**: 本ガイドは、直近に手作業で通した実フロー（Test Manager 手順抽出 `sample-test-case` → ScreenPlay 生成 → UIA 変換 → validate/build 検証）を「反復可能な工場（ハーネス）」へ産業化する設計。
 
 ---
 
@@ -62,7 +62,7 @@ flowchart TD
 ## 4. パイプライン各ステージ詳細
 
 ### Stage 0 — 取り込み（Ingest）
-- **入力**: Test Manager のテストケース手順（例 `HNTS:5`）
+- **入力**: Test Manager のテストケース手順（例 `sample-test-case`）
 - **ツール**:
   - `uip tm testcases list --project-key <P> --filter <KEY>` → テストケース UUID 解決
   - `uip tm testcases steps list --test-case-id <UUID> --output json` → 手順ステップを構造化取得
@@ -175,7 +175,7 @@ flowchart LR
 
 ## 7. サンプル・ひな形集
 
-> すべて本セッションの実証（UiBank ローン申請フォーム／Test Manager `HNTS:5`／7手順）に基づく実在の骨子。`_UIA変換.xaml` は validate クリーン・build 成功済み。
+> すべて本セッションの実証（UiBank ローン申請フォーム／Test Manager `sample-test-case`／7手順）に基づく実在の骨子。`_UIA変換.xaml` は validate クリーン・build 成功済み。
 
 ### 7.1 手順 → ScreenPlay 変換プロンプト（テンプレート）
 
@@ -264,7 +264,7 @@ flowchart LR
 ```bash
 #!/usr/bin/env bash
 set -euo pipefail
-PROJECT_DIR="/path/to/project"; PKEY="HNTS"; TCID="<UUID>"
+PROJECT_DIR="/path/to/project"; PKEY="sample-project"; TCID="<UUID>"
 
 # Stage 0: 手順取得
 uip tm testcases steps list --project-key "$PKEY" --test-case-id "$TCID" --output json > steps.json

@@ -44,7 +44,7 @@ uip rpa run "<FILE>" --project-dir "<DIR>" --output json
 
 ## 引数バインド
 
-- 引数（例：`メールアドレス`、既定 `demo@demo.com`）は `x:Members` に定義し、ルート属性で既定値を与える。
+- 引数（例：`メールアドレス`、既定 `test@example.invalid`）は `x:Members` に定義し、ルート属性で既定値を与える。
 - UIA 版で参照するときは `Text="[メールアドレス]"` のように角括弧。`Text=` プレフィックスで引数の既定値定義と区別される。
 - データ駆動テストにする場合は `dataVariationFilePath` を `fileInfoCollection` に足す（uipath-rpa の testing-guide）。
 

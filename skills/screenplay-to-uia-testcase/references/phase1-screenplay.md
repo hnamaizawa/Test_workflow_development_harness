@@ -91,7 +91,7 @@ Studio は作成時の `Task=` 属性を **`Prompt`** に正規化する。Promp
   <x:Property Name="メールアドレス" Type="InArgument(x:String)" />
 </x:Members>
 ```
-既定値はルートタグ属性で与える（例：`this:TestCase.メールアドレス="demo@demo.com"`、`xmlns:this="clr-namespace:"` が必要）。`InArgument<string>` の裸の属性値はリテラル扱い。
+既定値はルートタグ属性で与える（例：`this:TestCase.メールアドレス="test@example.invalid"`、`xmlns:this="clr-namespace:"` が必要）。`InArgument<string>` の裸の属性値はリテラル扱い。
 
 ## 手順取得（Test Manager が出所の場合）
 

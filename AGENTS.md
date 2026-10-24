@@ -14,12 +14,12 @@
 
 - **ProjectType**: TestAutomationProcess（Tests）／ **Framework**: Windows ／ **式言語**: VisualBasic
 - **主要テストケース**: `TestCase.xaml`（`project.json` の `designOptions.fileInfoCollection` 登録済み）
-- **引数**: `メールアドレス`（String、既定 `demo@demo.com`）／ **変数**: `resultText`（String）
+- **引数**: `メールアドレス`（String、既定 `test@example.invalid`）／ **変数**: `resultText`（String）
 - **依存パッケージ**: UiPath.System.Activities / UiPath.Testing.Activities / UiPath.UIAutomation.Activities
 
 ## 由来（今回の実装）
 
-- Test Manager プロジェクト **HNTS**（Namaizawa_Test_Project）のテストケース **HNTS:5**「ローン申請_全項目入力完了と正常送信」（7手順）から作成。
+- Test Manager プロジェクト **sample-project**（sample_test_project）のテストケース **sample-test-case**「ローン申請の正常送信」（7手順）から作成。
 - 対象アプリ: UiBank ローン申請（申請 `https://uibank.uipath.com/loans/apply` → 結果 `.../loans/result/...`、BrowserType: Edge）。
 
 ## TestCase.xaml の現状（UI Automation 版）

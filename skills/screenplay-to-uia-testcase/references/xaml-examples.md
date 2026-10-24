@@ -1,6 +1,6 @@
 # 実行サンプル（完全な XAML 例）
 
-題材は HNTS:5「ローン申請_全項目入力完了と正常送信」（UiBank ローン申請）。フェーズ1（ScreenPlay）とフェーズ2（UI Automation）の完全なテストケース XAML を示す。
+題材は sample-test-case「ローン申請の正常送信」（UiBank ローン申請）。フェーズ1（ScreenPlay）とフェーズ2（UI Automation）の完全なテストケース XAML を示す。
 
 **読み方**
 - 両フェーズは**同じヘッダー**（root 要素・名前空間・`x:Members`・NamespacesForImplementation/ReferencesForImplementation）を共有する。body（root `Sequence` 以下）だけが異なる。
@@ -10,7 +10,7 @@
 ## 共通ヘッダー（両フェーズ共通）
 
 ```xml
-<Activity mc:Ignorable="sap sap2010" x:Class="TestCase" this:TestCase.メールアドレス="demo@demo.com"
+<Activity mc:Ignorable="sap sap2010" x:Class="TestCase" this:TestCase.メールアドレス="test@example.invalid"
     xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
@@ -31,7 +31,7 @@
 </Activity>
 ```
 
-- `x:Class="TestCase"` と `this:TestCase.メールアドレス="demo@demo.com"`（引数の既定値）、`xmlns:this="clr-namespace:"` はセットで必要。
+- `x:Class="TestCase"` と `this:TestCase.メールアドレス="test@example.invalid"`（引数の既定値）、`xmlns:this="clr-namespace:"` はセットで必要。
 - ルートに `xmlns:uix`（UIA/ScreenPlay 共通）が必須。検証を使うなら `xmlns:uta` も。
 
 ## フェーズ1：ScreenPlay（NUITask）完全例（body）
@@ -39,7 +39,7 @@
 単一の NApplicationCard 配下に、1手順=1 NUITask を並べる（ScreenPlay は AI が画面遷移を吸収するため単一カードで良い）。
 
 ```xml
-<Sequence DisplayName="ローン申請_全項目入力完了と正常送信">
+<Sequence DisplayName="ローン申請の正常送信">
   <Sequence.Variables>
     <Variable x:TypeArguments="x:String" Name="resultText" />
   </Sequence.Variables>
@@ -130,7 +130,7 @@
 画面（ウィンドウスコープ）ごとに `NApplicationCard` を分ける。ここでは申請画面カードと結果画面カードの2枚。各アクティビティは実 `TestCase.xaml`（ビルド成功済み）の形に準拠。
 
 ```xml
-<Sequence DisplayName="ローン申請_全項目入力完了と正常送信">
+<Sequence DisplayName="ローン申請の正常送信">
   <Sequence.Variables>
     <Variable x:TypeArguments="x:String" Name="resultText" />
   </Sequence.Variables>
